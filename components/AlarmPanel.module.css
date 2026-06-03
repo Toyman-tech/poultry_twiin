@@ -1,0 +1,197 @@
+.panel {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0d8f0;
+  letter-spacing: 0.06em;
+  flex: 1;
+}
+
+.counts {
+  display: flex;
+  gap: 8px;
+}
+
+.critBadge {
+  font-size: 9px;
+  font-weight: 700;
+  color: #ff4444;
+  background: rgba(255,68,68,0.12);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  animation: blink 0.8s infinite;
+}
+
+.activeBadge {
+  font-size: 9px;
+  font-weight: 700;
+  color: #ffc107;
+  background: rgba(255,193,7,0.1);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+}
+
+@keyframes blink {
+  50% { opacity: 0.4; }
+}
+
+.ackAllBtn {
+  font-size: 9px;
+  font-weight: 700;
+  color: #00d4ff;
+  border: 1px solid rgba(0,212,255,0.3);
+  background: rgba(0,212,255,0.06);
+  padding: 3px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.ackAllBtn:hover {
+  background: rgba(0,212,255,0.15);
+}
+
+.alarmList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  max-height: 420px;
+  padding-right: 2px;
+}
+
+.alarmList::-webkit-scrollbar { width: 4px; }
+.alarmList::-webkit-scrollbar-track { background: transparent; }
+.alarmList::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.2); border-radius: 2px; }
+
+.noAlarms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px;
+  justify-content: center;
+  color: #2a5070;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Alarm Row ── */
+.alarmRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+  transition: all 0.3s;
+}
+
+.alarmActive {
+  border-color: rgba(255, 68, 68, 0.3);
+  background: rgba(255, 68, 68, 0.05);
+}
+
+.alarmAcknowledged {
+  border-color: rgba(255, 193, 7, 0.2);
+  background: rgba(255, 193, 7, 0.03);
+}
+
+.alarmResolved {
+  border-color: rgba(255,255,255,0.05);
+  background: transparent;
+  opacity: 0.4;
+}
+
+.alarmLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+
+.sevDot {
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sevCritical { filter: drop-shadow(0 0 4px rgba(255,68,68,0.8)); }
+.sevWarning  { filter: drop-shadow(0 0 4px rgba(255,193,7,0.6)); }
+.sevInfo     {}
+
+.alarmContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.alarmMessage {
+  font-size: 10px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.alarmRec {
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.3;
+}
+
+.alarmMeta {
+  display: flex;
+  gap: 4px;
+  font-size: 8px;
+  color: #2a5070;
+  letter-spacing: 0.04em;
+}
+
+.resolvedTag {
+  color: #2a6040;
+}
+
+.ackBtn {
+  font-size: 8px;
+  font-weight: 700;
+  color: #ff8800;
+  border: 1px solid rgba(255,136,0,0.3);
+  background: rgba(255,136,0,0.06);
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  font-family: inherit;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.ackBtn:hover { background: rgba(255,136,0,0.15); }
+
+.ackTag {
+  font-size: 8px;
+  color: #2a5070;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}

@@ -1,0 +1,62 @@
+/* ─── Reset & Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color tokens */
+  --color-bg:          #070c1a;
+  --color-surface:     rgba(10, 15, 30, 0.8);
+  --color-border:      rgba(0, 212, 255, 0.12);
+  --color-accent:      #00d4ff;
+  --color-success:     #00ff88;
+  --color-warning:     #ffc107;
+  --color-danger:      #ff4444;
+  --color-purple:      #a78bfa;
+
+  /* Typography */
+  --font-sans: var(--font-inter, 'Inter', system-ui, sans-serif);
+  --font-mono: var(--font-mono, 'Roboto Mono', 'Courier New', monospace);
+}
+
+html, body {
+  height: 100%;
+  background: var(--color-bg);
+  color: #c0d8f0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar         { width: 6px; height: 6px; }
+::-webkit-scrollbar-track   { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb   { background: rgba(0, 212, 255, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 212, 255, 0.4); }
+
+/* ─── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: #fff;
+}
+
+/* ─── Monospace values ──────────────────────────────────────────────────────── */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Utility: visually hidden ─────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,148 @@
+.panel {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0d8f0;
+  letter-spacing: 0.06em;
+}
+
+.panelSub {
+  font-size: 10px;
+  color: #3a6080;
+  letter-spacing: 0.08em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ─── Gauge Card ──── */
+.gaugeCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 10px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.gaugeCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.statusNormal.gaugeCard { border-color: rgba(0, 255, 136, 0.15); }
+.statusWarning.gaugeCard {
+  border-color: rgba(255, 193, 7, 0.4);
+  background: rgba(255, 193, 7, 0.03);
+}
+.statusCritical.gaugeCard {
+  border-color: rgba(255, 68, 68, 0.5);
+  background: rgba(255, 68, 68, 0.05);
+  animation: criticalPulse 1s infinite alternate;
+}
+.statusFault.gaugeCard {
+  border-color: rgba(150, 150, 150, 0.3);
+  background: rgba(100, 100, 100, 0.05);
+}
+
+@keyframes criticalPulse {
+  from { box-shadow: 0 0 0 rgba(255,68,68,0); }
+  to   { box-shadow: 0 0 12px rgba(255,68,68,0.2); }
+}
+
+.gaugeHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.gaugeIcon {
+  font-size: 14px;
+}
+
+.gaugeName {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  flex: 1;
+}
+
+.faultBadge {
+  font-size: 8px;
+  color: #888;
+  background: rgba(128,128,128,0.2);
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+
+.gaugeSvg {
+  width: 100%;
+  max-width: 140px;
+}
+
+.sparklineWrap {
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 2px;
+}
+
+.statusBadge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+.statusNormal .statusBadge,
+.statusBadge.statusNormal {
+  color: #00ff88;
+  background: rgba(0,255,136,0.08);
+}
+.statusWarning .statusBadge,
+.statusBadge.statusWarning {
+  color: #ffc107;
+  background: rgba(255,193,7,0.1);
+}
+.statusCritical .statusBadge,
+.statusBadge.statusCritical {
+  color: #ff4444;
+  background: rgba(255,68,68,0.12);
+}
+.statusFault .statusBadge,
+.statusBadge.statusFault {
+  color: #888;
+  background: rgba(128,128,128,0.1);
+}

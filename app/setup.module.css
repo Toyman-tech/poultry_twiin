@@ -1,0 +1,343 @@
+/* ─── Setup Page Styles ─────────────────────────────────────────────────────── */
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #070c1a;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.glowA {
+  position: fixed;
+  top: -300px; left: -300px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(0, 80, 200, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  animation: drift 8s ease-in-out infinite alternate;
+}
+
+.glowB {
+  position: fixed;
+  bottom: -300px; right: -300px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(120, 0, 200, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  animation: drift 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, 30px); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ─── Logo ── */
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoIcon {
+  font-size: 56px;
+  filter: drop-shadow(0 0 20px rgba(255,200,0,0.5));
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+.logoTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: #e0f0ff;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #e0f0ff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoSub {
+  font-size: 12px;
+  color: #3a6080;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ─── Card ── */
+.card {
+  width: 100%;
+  background: rgba(10, 15, 30, 0.85);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.02) inset;
+}
+
+.cardHeader {
+  text-align: center;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #c0d8f0;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.cardDesc {
+  font-size: 12px;
+  color: #3a6080;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Field ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fieldLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4a7fa5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fieldNote {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00d4ff;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ─── Text Input ── */
+.input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #c0d8f0;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+}
+
+.input::placeholder { color: #2a4060; }
+
+/* ─── Zone Grid ── */
+.zoneGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.zoneCard {
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  font-family: inherit;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.zoneCard:hover {
+  border-color: rgba(0,212,255,0.3);
+  background: rgba(0,212,255,0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.zoneCardActive {
+  border-color: rgba(0,212,255,0.6) !important;
+  background: rgba(0,212,255,0.06) !important;
+  box-shadow: 0 0 0 1px rgba(0,212,255,0.2), 0 8px 30px rgba(0,212,255,0.1) !important;
+}
+
+.zonePreview {
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 12px;
+}
+
+.previewSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.zoneInfo {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.zoneLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0d8f0;
+  letter-spacing: 0.02em;
+}
+
+.zoneDesc {
+  font-size: 10px;
+  color: #3a6080;
+  line-height: 1.4;
+}
+
+.zoneCapacity {
+  font-size: 10px;
+  color: #00d4ff;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.selectedBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #00ff88;
+  background: rgba(0,255,136,0.12);
+  border: 1px solid rgba(0,255,136,0.3);
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Slider ── */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0,212,255,0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00d4ff;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,212,255,0.5);
+  transition: box-shadow 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 14px rgba(0,212,255,0.8);
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #2a4060;
+  letter-spacing: 0.06em;
+  margin-top: -4px;
+}
+
+/* ─── Launch Button ── */
+.launchBtn {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,212,255,0.4);
+  background: linear-gradient(135deg, rgba(0,80,160,0.4) 0%, rgba(0,40,100,0.4) 100%);
+  color: #00d4ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.launchBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.launchBtn:hover:not(:disabled)::before { opacity: 1; }
+.launchBtn:hover:not(:disabled) {
+  border-color: rgba(0,212,255,0.8);
+  box-shadow: 0 0 30px rgba(0,212,255,0.2);
+  transform: translateY(-1px);
+}
+
+.launchBtnLoading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ─── Footer ── */
+.footer {
+  font-size: 10px;
+  color: #1a3050;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

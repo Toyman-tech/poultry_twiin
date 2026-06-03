@@ -1,0 +1,48 @@
+.panel {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0d8f0;
+  letter-spacing: 0.06em;
+  flex: 1;
+}
+
+.outageBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff8800;
+  letter-spacing: 0.1em;
+  animation: blink 0.6s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.2; }
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+@keyframes bob {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-4px); }
+}

@@ -1,0 +1,62 @@
+.root {
+  min-height: 100vh;
+  background: #070c1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.main {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Row 1: Schematic + Demo ── */
+.row1 {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 14px;
+  align-items: start;
+}
+
+/* ─── Row 2: Sensors + Alarms ── */
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 14px;
+  align-items: start;
+}
+
+/* ─── Row 3: Machines full width ── */
+.row3 {
+  width: 100%;
+}
+
+/* Wrappers just for semantic clarity */
+.schematicWrap, .demoWrap, .sensorsWrap, .alarmsWrap { min-width: 0; }
+
+/* ─── Ambient Glows ── */
+.glowTL {
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 80, 160, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glowBR {
+  position: fixed;
+  bottom: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(80, 0, 160, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}

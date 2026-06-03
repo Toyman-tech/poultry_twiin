@@ -1,0 +1,81 @@
+.panel {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0d8f0;
+  letter-spacing: 0.06em;
+}
+
+.panelSub {
+  font-size: 10px;
+  color: #3a6080;
+  letter-spacing: 0.08em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.chartCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.chartLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.chartValue {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.chartUnit {
+  font-size: 9px;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.canvasWrap {
+  height: 80px;
+  position: relative;
+}
+
+.canvasWrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
