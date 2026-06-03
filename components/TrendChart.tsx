@@ -157,7 +157,13 @@ export default function TrendChart({ sensors }: TrendChartProps) {
       </div>
       <div className={styles.grid}>
         {CHART_SENSORS.map(cfg => (
-          <MiniLineChart key={cfg.id} {...cfg} sensors={sensors} />
+          <MiniLineChart
+  key={cfg.id}
+  sensorId={cfg.id}
+  label={cfg.label}
+  color={cfg.color}
+  sensors={sensors}
+/>
         ))}
       </div>
     </div>
