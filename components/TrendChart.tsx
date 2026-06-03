@@ -84,7 +84,7 @@ function MiniLineChart({
               bodyColor: '#c0d8f0',
               padding: 8,
               callbacks: {
-                label: ctx => ` ${ctx.parsed.y.toFixed(1)} ${sensor.unit}`,
+                label: (ctx) => ` ${ctx.parsed.y!.toFixed(1)} ${sensor.unit}`,
               },
             },
           },
